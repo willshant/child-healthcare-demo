@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">app-for-child-demo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_word">First Name</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Child not saved. It contains empty info.</string>
+</resources>
