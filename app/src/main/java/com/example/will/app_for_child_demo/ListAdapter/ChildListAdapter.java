@@ -10,18 +10,11 @@ import android.widget.TextView;
 import com.example.will.app_for_child_demo.Entity.Child;
 import com.example.will.app_for_child_demo.R;
 
+import java.util.Date;
 import java.util.List;
 
+// adapter fill data into views
 public class ChildListAdapter extends RecyclerView.Adapter<ChildListAdapter. ChildViewHolder> {
-
-    class ChildViewHolder extends RecyclerView.ViewHolder {
-        private final TextView childItemView;
-
-        private ChildViewHolder(View itemView) {
-            super(itemView);
-            childItemView = itemView.findViewById(R.id.textView);
-        }
-    }
 
     private final LayoutInflater mInflater;
     private List<Child> mAllChild; // Cached copy of words
@@ -34,14 +27,33 @@ public class ChildListAdapter extends RecyclerView.Adapter<ChildListAdapter. Chi
         return new ChildViewHolder(itemView);
     }
 
+    class ChildViewHolder extends RecyclerView.ViewHolder {
+        private final TextView firstNameItemView;
+        private final TextView lastNameItemView;
+        private final TextView birthdayItemView;
+
+        // match a view holder to UI fields
+        private ChildViewHolder(View itemView) {
+            super(itemView);
+            firstNameItemView = itemView.findViewById(R.id.view_first_name);
+            lastNameItemView = itemView.findViewById(R.id.view_last_name);
+            birthdayItemView = itemView.findViewById(R.id.view_birthday);
+        }
+    }
+
     @Override
     public void onBindViewHolder(ChildViewHolder holder, int position) {
         if (mAllChild != null) {
             Child current = mAllChild.get(position);
-            holder.childItemView.setText(current.getFirstName());
+            holder.firstNameItemView.setText(current.getFirstName());
+            holder.lastNameItemView.setText(current.getLastName());
+            String birthday = Integer.toString(current.getBirthday().getMonth() + 1)
+                    + '/' + Integer.toString(current.getBirthday().getDate())
+                    + '/' + Integer.toString(current.getBirthday().getYear() + 1900);
+            holder.birthdayItemView.setText(birthday);
         } else {
             // Covers the case of data not being ready yet.
-            holder.childItemView.setText("No First Name");
+            holder.firstNameItemView.setText("Data not ready");
         }
     }
 

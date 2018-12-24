@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Entity(tableName = "child_table")
 public class Child {

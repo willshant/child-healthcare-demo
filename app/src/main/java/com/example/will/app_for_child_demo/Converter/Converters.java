@@ -2,7 +2,7 @@ package com.example.will.app_for_child_demo.Converter;
 
 import android.arch.persistence.room.TypeConverter;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 // to enable date type in child entity to be stored in DB
