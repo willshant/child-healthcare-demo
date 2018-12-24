@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.will.app_for_child_demo.Entity.Child;
 import com.example.will.app_for_child_demo.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -47,10 +48,11 @@ public class ChildListAdapter extends RecyclerView.Adapter<ChildListAdapter. Chi
             Child current = mAllChild.get(position);
             holder.firstNameItemView.setText(current.getFirstName());
             holder.lastNameItemView.setText(current.getLastName());
-            String birthday = Integer.toString(current.getBirthday().getMonth() + 1)
-                    + '/' + Integer.toString(current.getBirthday().getDate())
-                    + '/' + Integer.toString(current.getBirthday().getYear() + 1900);
-            holder.birthdayItemView.setText(birthday);
+//            String birthday = Integer.toString(current.getBirthday().getMonth() + 1)
+//                    + '/' + Integer.toString(current.getBirthday().getDate())
+//                    + '/' + Integer.toString(current.getBirthday().getYear() + 1900);
+//            holder.birthdayItemView.setText(birthday);
+            holder.birthdayItemView.setText(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(current.getBirthday()));
         } else {
             // Covers the case of data not being ready yet.
             holder.firstNameItemView.setText("Data not ready");
