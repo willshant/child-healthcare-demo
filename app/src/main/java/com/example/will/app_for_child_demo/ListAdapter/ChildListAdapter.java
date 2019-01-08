@@ -52,7 +52,7 @@ public class ChildListAdapter extends RecyclerView.Adapter<ChildListAdapter. Chi
 //                    + '/' + Integer.toString(current.getBirthday().getDate())
 //                    + '/' + Integer.toString(current.getBirthday().getYear() + 1900);
 //            holder.birthdayItemView.setText(birthday);
-            holder.birthdayItemView.setText(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(current.getBirthday()));
+            holder.birthdayItemView.setText(new SimpleDateFormat("yyyy-MM-dd").format(current.getBirthday()));
         } else {
             // Covers the case of data not being ready yet.
             holder.firstNameItemView.setText("Data not ready");
