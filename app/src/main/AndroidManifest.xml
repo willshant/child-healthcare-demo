@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.NewChildActivity"></activity>
-
+        <activity android:name=".Activity.ChildMainActivity"></activity>
     </application>
 
 </manifest>
