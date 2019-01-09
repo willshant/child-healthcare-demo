@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.will.app_for_child_demo.Entity.Child;
 import com.example.will.app_for_child_demo.R;
 
 public class ChildMainActivity extends AppCompatActivity {
@@ -18,15 +19,15 @@ public class ChildMainActivity extends AppCompatActivity {
     }
 
     private void getIncomingIntent() {
-        if (getIntent().hasExtra("child_name")) {
-            String childName = getIntent().getStringExtra("child_name");
-            setChildPreview(childName);
+        if (getIntent().hasExtra("child_clicked")) {
+            Child child = (Child) getIntent().getSerializableExtra("child_clicked");
+            setChildPreview(child);
         }
     }
 
-    private void setChildPreview(String childName) {
+    private void setChildPreview(Child child) {
         TextView name = findViewById(R.id.child_name);
-        name.setText(childName);
+        name.setText(child.getFirstName() + " " + child.getLastName());
 
     }
 }

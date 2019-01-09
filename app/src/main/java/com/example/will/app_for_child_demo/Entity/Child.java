@@ -5,10 +5,11 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity(tableName = "child_table")
-public class Child {
+public class Child implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;

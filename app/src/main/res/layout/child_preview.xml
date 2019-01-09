@@ -51,7 +51,7 @@
         android:layout_height="match_parent"
         android:layout_weight="15"
 
-        tools:srcCompat="@android:drawable/ic_menu_edit" />
+        tools:src="@drawable/ic_edit_black_24dp" />
 
 
 </LinearLayout>

@@ -70,7 +70,7 @@ public class ChildListAdapter extends RecyclerView.Adapter<ChildListAdapter. Chi
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mcontext, ChildMainActivity.class);
-                    intent.putExtra("child_name", current.getFirstName() + ' ' + current.getLastName());
+                    intent.putExtra("child_clicked", current);
                     mcontext.startActivity(intent);
                 }
             });
