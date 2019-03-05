@@ -1,6 +1,6 @@
 # child-healthcare-demo
 
-#### requirements to be done
+#### requirements under construction: 
  - main page search & sorting
  - malnutrition radio & nutritious status image
  - Others to be discussed ...
