@@ -19,6 +19,7 @@ public class ChildViewModel extends AndroidViewModel {
         super(application);
         mRepository = new ChildRepository(application);
         mAllChild = mRepository.getAllChild();
+
     }
 
     public LiveData<List<Child>> getAllChild() {
@@ -27,5 +28,9 @@ public class ChildViewModel extends AndroidViewModel {
 
     public void insert(Child child) {
         mRepository.insert(child);
+    }
+
+    public void update(Child child) {
+        mRepository.update(child);
     }
 }

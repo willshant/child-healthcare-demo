@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:weightSum="100">
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="15"
-        android:id="@+id/gender"/>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="70"
-        android:weightSum="100">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="50"
-            android:id="@+id/child_name" />
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="50"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-
-                android:id="@+id/child_id" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-
-                android:id="@+id/child_age" />
-
-        </LinearLayout>
-    </LinearLayout>
+        android:id="@+id/preview_gender"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageView
-        android:id="@+id/edit_button"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="15"
+    <TextView
+        android:id="@+id/preview_name"
+        android:layout_width="237dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/preview_gender"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        tools:src="@drawable/ic_edit_black_24dp" />
+    <TextView
+        android:id="@+id/preview_dni"
+        android:layout_width="243dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/preview_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/preview_age"
+        android:layout_width="243dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/preview_name" />
+
+    <Button
+        android:id="@+id/preview_edit_child"
+        android:layout_width="100dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:background="@color/blue"
+        android:text="Edit Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

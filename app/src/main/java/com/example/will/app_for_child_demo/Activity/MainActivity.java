@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_CHILD_ACTIVITY_REQUEST_CODE = 1;
 
-    private ChildViewModel mChildViewModel;
+    public static ChildViewModel mChildViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +72,17 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_CHILD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Child child = new Child(data.getStringExtra(NewChildActivity.FIRST_NAME),
-                    data.getStringExtra(NewChildActivity.LAST_NAME), new Date(Long.valueOf(data.getStringExtra(NewChildActivity.BIRTHDAY))));
+            Child child = new Child(data.getStringExtra(NewChildActivity.NAME),
+                    new Date(Long.valueOf(data.getStringExtra(NewChildActivity.BIRTHDAY))),
+                    Boolean.valueOf(data.getStringExtra(NewChildActivity.GENDER)),
+                    data.getStringExtra(NewChildActivity.DNI),
+                    Double.valueOf(data.getStringExtra(NewChildActivity.WEIGHT)),
+                    data.getStringExtra(NewChildActivity.MOM_NAME),
+                    data.getStringExtra(NewChildActivity.LOCATION),
+                    data.getStringExtra(NewChildActivity.COMMUNITY),
+                    Boolean.valueOf(data.getStringExtra(NewChildActivity.FACILITY)),
+                    Boolean.valueOf(data.getStringExtra(NewChildActivity.DISABILITY))
+                    );
             mChildViewModel.insert(child);
         } else {
             Toast.makeText(
@@ -84,26 +93,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

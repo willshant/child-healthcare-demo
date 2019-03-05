@@ -3,6 +3,7 @@
     package="com.example.will.app_for_child_demo">
 
     <application
+        android:name="com.example.will.app_for_child_demo.Converter.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,12 +16,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Activity.NewChildActivity"></activity>
         <activity android:name=".Activity.ChildMainActivity"></activity>
+        <activity android:name=".Activity.HomeVisitActivity"></activity>
+        <activity android:name=".Activity.FinishVisitActivity"></activity>
+        <activity android:name=".Activity.HomeVisitRegisterActivity"></activity>
     </application>
 
 </manifest>

@@ -6,5 +6,7 @@
 
     <include layout="@layout/child_preview" />
 
+    <include layout="@layout/child_detail" />
+
 
 </LinearLayout>

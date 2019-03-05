@@ -9,13 +9,16 @@ import android.content.Context;
 
 import com.example.will.app_for_child_demo.Converter.Converters;
 import com.example.will.app_for_child_demo.Dao.ChildDao;
+import com.example.will.app_for_child_demo.Dao.HomeVisitDao;
 import com.example.will.app_for_child_demo.Entity.Child;
+import com.example.will.app_for_child_demo.Entity.HomeVisit;
 
-@Database(entities = {Child.class}, version = 1)
+@Database(entities = {Child.class, HomeVisit.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class MyRoomDB extends RoomDatabase {
 
     public abstract ChildDao childDao();
+    public abstract HomeVisitDao homeVisitDao();
 
     private static volatile MyRoomDB INSTANCE;
 

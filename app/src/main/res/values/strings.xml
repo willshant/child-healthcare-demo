@@ -1,7 +1,27 @@
 <resources>
-    <string name="app_name">app-for-child-demo</string>
+    <string name="app_name">ELEMENTOS CHILD CARE</string>
     <string name="action_settings">Settings</string>
-    <string name="hint_word">First Name</string>
+
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Child not saved. It contains empty info.</string>
+
+    <string name="congrats">You have finished all the contents of this home visit agenda.
+        You can go back to individual\'s page or continue to register child health indicators</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="facility">
+        <item>Home</item>
+        <item>Health Center</item>
+    </string-array>
+    <string-array name="disability">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="development">
+        <item>Good</item>
+        <item>Delayed</item>
+    </string-array>
 </resources>

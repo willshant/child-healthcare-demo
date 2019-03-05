@@ -1,29 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/parent_layout"
-                android:weightSum="100">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent_layout"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+        android:id="@+id/view_checkup"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_weight="60"
+        app:layout_constraintStart_toEndOf="@+id/view_malnutri"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/view_malnutri"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_weight="60"
+        app:layout_constraintStart_toEndOf="@+id/view_anemia"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/view_anemia"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_weight="60"
+        app:layout_constraintStart_toEndOf="@+id/view_age"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/view_first_name"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@android:color/holo_orange_light"
-        android:layout_weight="33.3"/>
+        android:id="@+id/view_name"
+        android:layout_width="158dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/view_gender"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/view_gender"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_weight="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/view_last_name"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@android:color/holo_orange_light"
-        android:layout_weight="33.3"/>
+        android:id="@+id/view_visit_date"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/view_checkup"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/view_birthday"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@android:color/holo_orange_light"
-        android:layout_weight="33.4"/>
-</LinearLayout>
+        android:id="@+id/view_age"
+        android:layout_width="76dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/view_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
