@@ -1,7 +1,7 @@
 # child-healthcare-demo
 
 #### requirements under construction: 
- - main page search & sorting
+ - main page searching & sorting
  - malnutrition radio & nutritious status image
  - form validation
  - upload module
